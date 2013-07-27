@@ -1,0 +1,29 @@
+为下面的各个语言构建无二义性的上下文无关文法。
+1. 用后缀方式表示的算术表达式
+2. 由逗号分隔开的左结合的标识符列表
+3. 由逗号分隔开的右结合的标识符列表
+4. 由整数， 标识符， 四个二目运算符+,-,*,/构成的算术表达式
+！5. 在第四问的运算符中增加单目+和单目-构成的算术表达式
+
+
+digit → 0  |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9
+标识符用id表示
+1.
+S → + S S  |  - S S  |  * S S  |  / S S  |  digit
+
+2.
+list → list,id  |  id
+
+3.
+list → id,list  |  id
+
+4.
+expr → expr + term  |  expr - term  |  term
+term → term * factor  |  term / factor  |  factor
+factor → id  |  digit  |  (expr)
+
+5.
+expr → expr + term  |  expr - term  |  term
+term → term * unary  |  term / unary  |  unary
+unary → + factor  |  - factor  |  factor
+factor → id  |  digit  |  (expr)

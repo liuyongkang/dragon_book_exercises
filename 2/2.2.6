@@ -1,0 +1,11 @@
+为罗马数字构建一个上下文无关文法
+
+
+N → Th Ha Te On
+On → lOn  |  IV  |  V lOn  |  IX
+lOn → ε  |  I  |  II  |  III
+Te → lTe  |  XL  |  L lTe  |  XC
+lTe → ε  |  X  |  XX  |  XXX
+Ha → lHa  |  CD  |  D lHa  |  CM
+lHa → ε  |  C  |  CC  |  CCC
+Th → M Th  |  ε
