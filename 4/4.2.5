@@ -1,0 +1,9 @@
+使用4.2.4中描述的括号表示法来简化如下的关于语句块和条件语句的文法
+	stmt → if  expr  then  stmt  else  stmt
+	     | if  stmt  then  stmt
+	     | begin  stmtList  end
+	stmtList → stmt; stmtList  |  stmt
+
+stmt → if expr then stmt [else stmt]
+     | begin stmtList stmt end
+stmtList → {stmt}  |  ε
